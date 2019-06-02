@@ -1,0 +1,53 @@
+1. Make a project forlder
+2. open a command window for porject location
+3. To create a virtual environment
+	pip3 install virtualenvwrapper-win
+	python3 -m venv NameOfTheEnv
+4. Go to the scripts directory
+5. activate
+6. Installing django
+	pip3 install django
+7. Starting a new Project
+	django-admin startproject NameOfProject
+8. runserver
+	python manage.py runserver
+9. Check the server running at at http://127.0.0.1:8000/
+
+10. To set the database Postgresql
+11. Install postgresql
+12. remember the password
+13. create a database in pgadmin application
+14. In settings.py change the database engine for sqlite3 to 
+	'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'school',
+        'USER': 'postgres',
+        'PASSWORD': 'admin123',
+        'HOST': '127.0.0.1',
+        'PORT': '5432'
+15. pip install psycopg2 (dependencies for Postgresql in django)
+16. python manage.py makemigrations
+17. python manage.py migrate (It will create 10 tables in Postgresql)
+18. python manage.py createsuperuser (for your web admin)
+19. python manage.py startapp NameOfApp (create a new app)
+20. Write first view in your apps views.py file
+
+	from django.http import HttpResponse
+	
+	def index(request):
+		return HttpResponse("Hello, world. You're at the App index.")
+
+21. Create a file urls.py in your app
+
+22. Put these code in urls.py file
+	from django.urls import path
+	from . import views
+	urlpatterns = [
+		path('', views.index, name='index'),
+	]
+23. Point your app urls to your main project urls.py
+	from django.contrib import admin
+	from django.urls import include, path
+	urlpatterns = [
+		path('polls/', include('polls.urls')),
+		path('admin/', admin.site.urls),
+	]
