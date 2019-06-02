@@ -25,11 +25,7 @@
         'HOST': '127.0.0.1',
         'PORT': '5432'
 15. pip install psycopg2 (dependencies for Postgresql in django)
-16. python manage.py makemigrations
-17. python manage.py migrate (It will create 10 tables in Postgresql)
-18. python manage.py createsuperuser (for your web admin)
-19. python manage.py startapp NameOfApp (create a new app)
-20. Write first view in your apps views.py file
+
 
 	from django.http import HttpResponse
 	
@@ -51,3 +47,4 @@
 		path('polls/', include('polls.urls')),
 		path('admin/', admin.site.urls),
 	]
+This is a test change
