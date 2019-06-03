@@ -147,6 +147,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 TENANT_MODEL = "customers.Client"  # app.Model
 
 TENANT_DOMAIN_MODEL = "customers.Domain"  # app.Model
